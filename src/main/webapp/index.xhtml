@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="jakarta.faces.html"
+	xmlns:f="jakarta.faces.core">
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Registro Aspirante</title>
+<h:outputStylesheet name="indexStyle.css" library="css"/>
+</h:head>
+<h:body>
+	<h1>Registro Aspirante</h1>
+	#{AspDao.llenar_carreras()}
+	
+	<h:form>
+					
+	<h:panelGrid columns="2" columnsClasses="label, input">
+	
+	
+		<h:outputLabel for="numeroIde" value="Numero de identificacion:" />
+		<h:inputText  id="numeroIde" value="#{Asp.dto.numeroIde}" requiredMessage="campo obligatorio" required="true"/>
+		<h:outputLabel for="nombres" value="Nombres:" />
+		<h:inputText  id="nombres" value="#{Asp.dto.nombre}" requiredMessage="campo obligatorio" required="true"/>
+		<h:outputLabel for="apellidos" value="Apellidos:" />
+		<h:inputText  id="apellidos" value="#{Asp.dto.apellidos}" requiredMessage="campo obligatorio" required="true"/>
+		<h:outputLabel for="correo" value="Correo:" />
+		<h:inputText  id="correo" value="#{Asp.dto.correo}" requiredMessage="campo obligatorio" required="true"/>
+	</h:panelGrid>
+		
+		<h:selectOneMenu value="#{Asp.dto.carrera}" name="carrera">
+		    <f:selectItems value="#{AspDao.carreras}" var="item"
+		                   itemValue="#{item}" itemLabel="#{item}" />
+		</h:selectOneMenu>
+	
+	<h:commandButton value="Registrar" action="#{Asp.registrarAspirante}"/>
+	</h:form>
+	
+</h:body>
+<footer>
+    <p>Cesar Osneider Riascos Perea</p>
+    <p>Programacion avanzada</p>
+    <p>578 - 301</p>
+    <p>Universidad Distrital</p>
+    <p>2026</p>
+</footer>
+</html>

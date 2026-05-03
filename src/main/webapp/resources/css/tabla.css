@@ -1,0 +1,77 @@
+@charset "UTF-8";
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fondo */
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+    padding: 30px;
+}
+
+/* Título */
+h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #333;
+}
+
+/* Tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Encabezado */
+th {
+    background: #007bff;
+    color: white;
+    padding: 12px;
+    text-align: left;
+    font-size: 14px;
+}
+
+/* Celdas */
+td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #ddd;
+    font-size: 14px;
+}
+
+/* Filas alternas */
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+/* Hover */
+tr:hover {
+    background: #e6f0ff;
+}
+
+/* Última fila sin borde */
+tr:last-child td {
+    border-bottom: none;
+}
+
+/* Responsive simple */
+@media (max-width: 768px) {
+    table {
+        font-size: 12px;
+    }
+
+    th, td {
+        padding: 8px;
+    }
+    .footer {
+    margin-top: 30px;
+    text-align: center;
+}
+}

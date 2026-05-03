@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<h:html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="jakarta.faces.html"
+	xmlns:f="jakarta.faces.core">
+	<h:outputStylesheet name="tabla.css" library="css"/>
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Estudiantes registrados</title>
+</h:head>
+
+<h:body>
+	<h1>Estudiantes registrados</h1>
+
+	<h:dataTable value="#{AspDao.aspirantes}" var="item">
+		<h:column>
+			<f:facet name="header">Identificaion</f:facet>
+			#{item.numeroIde}
+		</h:column>
+		<h:column>
+			<f:facet name="header">Nombre</f:facet>
+			#{item.nombre}
+		</h:column>
+		<h:column>
+			<f:facet name="header">Apellidos</f:facet>
+			#{item.apellidos}
+		</h:column>
+		<h:column>
+			<f:facet name="header">Correo</f:facet>
+			#{item.correo}
+		</h:column>
+		<h:column>
+			<f:facet name="header">Carrera Escojida</f:facet>
+			#{item.carrera}
+		</h:column>
+	</h:dataTable>
+</h:body>
+<footer>
+    <p>Cesar Osneider Riascos Perea</p>
+    <p>Programacion avanzada</p>
+    <p>578 - 301</p>
+    <p>Universidad Distrital</p>
+    <p>2026</p>
+</footer>
+</h:html>
